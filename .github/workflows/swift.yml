@@ -29,5 +29,5 @@ jobs:
 
       - name: Build and test
         run: |
-          xcodebuild build -destination 'platform=iOS Simulator,name=iPhone 13' -scheme 'APIClient-Package'
-          xcodebuild test-without-building -destination 'platform=iOS Simulator,name=iPhone 13' -scheme 'APIClient-Package'
+          xcodebuild build -destination 'platform=iOS Simulator,name=iPhone 13' -scheme 'Log-Package'
+          xcodebuild test-without-building -destination 'platform=iOS Simulator,name=iPhone 13' -scheme 'Log-Package'
