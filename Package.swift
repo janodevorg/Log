@@ -4,9 +4,11 @@ import PackageDescription
 let package = Package(
     name: "Log",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v13), 
         .macCatalyst(.v13), 
-		.macOS(.v12)
+        .macOS(.v12),
+        .tvOS(.v13),
+        .watchOS(.v6)
     ],
     products: [
         .library(name: "Logger", targets: ["Logger"]),
