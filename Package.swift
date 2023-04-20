@@ -12,9 +12,7 @@ let package = Package(
     ],
     products: [
         .library(name: "Logger", targets: ["Logger"]),
-        .library(name: "LoggerDynamic", type: .dynamic, targets: ["Logger"]),
         .library(name: "DumpLogger", targets: ["DumpLogger"]),
-        .library(name: "DumpLoggerDynamic", type: .dynamic, targets: ["DumpLogger"]),
     ],
     dependencies: [
         .package(url: "git@github.com:apple/swift-docc-plugin.git", from: "1.0.0"),
