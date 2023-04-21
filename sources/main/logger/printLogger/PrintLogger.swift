@@ -10,7 +10,7 @@ import Foundation
  ```
  */
 open class PrintLogger: ObservableObject, Logger
-{
+{    
     // MARK: - Initializer
 
     public let label: String
@@ -39,7 +39,23 @@ open class PrintLogger: ObservableObject, Logger
         Serializer(
             label: label,
             level: level.icon(),
-            message: (object as? String) ?? dump(object),
+            message: dump(object),
+            file: file,
+            function: function,
+            line: line
+        ).serialize()
+    }
+    
+    public func serialize<T>(_ message: String,
+                             _ object: T,
+                             level: Level,
+                             file: String = #fileID,
+                             function: String = #function,
+                             line: UInt = #line) -> String {
+        Serializer(
+            label: label,
+            level: level.icon(),
+            message: message + " " + dump(object),
             file: file,
             function: function,
             line: line
