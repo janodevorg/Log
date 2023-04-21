@@ -50,9 +50,9 @@ public extension Logger {
     
     func debug<T>(_ string: @autoclosure @escaping () -> String,
                   _ object: @autoclosure @escaping () -> T,
-                  file: String,
-                  function: String,
-                  line: UInt) {
+                  file: String = #fileID,
+                  function: String = #function,
+                  line: UInt = #line) {
         #if DEBUG
         log(string, object, level: .debug, file: file, function: function, line: line)
         #endif

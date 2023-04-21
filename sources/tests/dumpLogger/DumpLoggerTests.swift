@@ -17,6 +17,21 @@ final class DumpLoggerTests: XCTestCase
         }
         DumpLogger(label: "dump", send: send).debug(["a": "b", "c": "d"], line: 18)
     }
+    
+    func testDebug_object() {
+        let send = { message in
+            XCTAssertEqual(
+                message,
+                """
+                [dump] DumpLoggerTests.testDebug_object…: 18 · Foo [
+                  "a": "b",
+                  "c": "d"
+                ]
+                """
+            )
+        }
+        DumpLogger(label: "dump", send: send).debug("Foo", ["a": "b", "c": "d"], line: 18)
+    }
 
     func testSerialization_debugObject() {
         let logger = DumpLogger(label: "dump", send: { _ in })
