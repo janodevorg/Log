@@ -29,7 +29,7 @@ public extension Logger {
         #endif
     }
     
-    func trace<T>(_ string: @escaping () -> String,
+    func trace<T>(_ string: @autoclosure @escaping () -> String,
                   _ object: @autoclosure @escaping () -> T,
                   file: String = #fileID,
                   function: String = #function,
@@ -67,7 +67,7 @@ public extension Logger {
         #endif
     }
     
-    func info<T>(_ string: @escaping () -> String,
+    func info<T>(_ string: @autoclosure @escaping () -> String,
                  _ object: @autoclosure @escaping () -> T,
                  file: String = #fileID,
                  function: String = #function,
@@ -86,7 +86,7 @@ public extension Logger {
         #endif
     }
 
-    func warn<T>(_ string: @escaping () -> String,
+    func warn<T>(_ string: @autoclosure @escaping () -> String,
                  _ object: @autoclosure @escaping () -> T,
                  file: String = #fileID,
                  function: String = #function,
@@ -105,7 +105,7 @@ public extension Logger {
         #endif
     }
     
-    func error<T>(_ string: @escaping () -> String,
+    func error<T>(_ string: @autoclosure @escaping () -> String,
                   _ object: @autoclosure @escaping () -> T,
                   file: String = #fileID,
                   function: String = #function,
