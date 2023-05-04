@@ -13,13 +13,13 @@ log.debug("200 GET https://domain.com/api?1=2")
 
 ```swift
 dependencies: [
-    .package(name: "Log", url: "https://github.com/janodevorg/Log.git", from: "1.0.0")
+    .package(url: "git@github.com:janodevorg/Log.git", from: "1.1.2")
 ],
 targets: [
     .target(
         name: "SomeTarget",
         dependencies: [
-            .product(name: "Log", package: "Log")
+            .product(name: "DumpLogger", package: "Log")
         ],
 // ...
 ```
